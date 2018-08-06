@@ -30,7 +30,7 @@ This code `-t siminc2:1.0` means you will create a image named 'siminc2' and tag
 
 You can execute the command below to create a new container using this new image created. Note: `$(pwd)` means your current directory. You can also change it, if you want.
 ```
-docker run -it -v $(pwd):/var/www --name SIMINC2 -e APPLICATION_ENV="development" -p 8082:80 -p 9002:9000 siminc2:1.0
+docker run -it -v $(pwd):/var/www --name SIMINC2 -e APPLICATION_ENV="development" -p 8082:80 -p 9002:9000 culturagovbr/siminc2-web:1.0 &
 ```
 
 Or You you can also execute the same command above, but arranging using docker-compose:
