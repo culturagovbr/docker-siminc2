@@ -45,5 +45,7 @@ If you wanna check something inside your container you can access using the comm
 docker exec -it siminc2 bash
 ```
 
+More information [here](https://hub.docker.com/r/culturagovbr/siminc2)
+
 See the authors of this repo:
 * [Authors](./Authors.md).
