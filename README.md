@@ -9,7 +9,6 @@ Repo used to have a recipe(Dockerfile) to create a image used by SIMINC2
 * Build image
 * Create a container from image created
 * Run Container
-* Modify './global/database.php' your database connection configuration
 
 ### Folder structure to create container
 ```
@@ -23,14 +22,14 @@ Repo used to have a recipe(Dockerfile) to create a image used by SIMINC2
 * Enter inside this cloned repository;
 * Execute the commando below to create a new image.
 ```
-docker build -t siminc2:1.1 .
+docker build -t culturagovbr/siminc2:1.1 .
 ```
 
-This code `-t siminc2:1.1` means you will create a image named 'siminc2' and tag '1.1' and the `.` means your build will use the same folder.
+This code `-t culturagovbr/siminc2:1.1` means you will create a image named 'siminc2' and tag '1.1' and the `.` means your build will use the same folder.
 
 You can execute the command below to create a new container using this new image created. Note: `$(pwd)` means your current directory. You can also change it, if you want.
 ```
-docker run -it -v $(pwd):/var/www --name siminc2 -e APPLICATION_ENV="development" -p 8082:80 -p 9002:9000 culturagovbr/siminc2:1.1
+docker run -it -v $(pwd):/var/www --name siminc2-web -e APPLICATION_ENV="development" -p 8082:80 -p 9002:9000 culturagovbr/siminc2:1.1
 ```
 
 Or You you can also execute the same command above, but arranging using docker-compose:
@@ -42,7 +41,7 @@ Or You you can also execute the same command above, but arranging using docker-c
 
 If you wanna check something inside your container you can access using the command below:
 ```
-docker exec -it siminc2 bash
+docker exec -it siminc2-web bash
 ```
 
 More information [here](https://hub.docker.com/r/culturagovbr/siminc2)
